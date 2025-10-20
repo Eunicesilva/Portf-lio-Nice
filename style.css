@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;/*movimento suave do mouse*/
+
+}
+
+:root { /* raiz do projeto cores padrões*/
+    --primaria: #4f46e5; /* quando se coloca -- ele entende que isso é uma váriavel um valor que está cravado*/
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255,255,255, 0.1); 
+}
+
+body {
+    background: var(--escuro);
+    color: var(--claro);
+}
+.navegação {
+  position:fixed; /* serve para fixar o menu*/
+  top: 0; /*garantir que o menu fique no topo*/
+  background: rgba(15,23,42, 0.8); /* deixar ele meio transparente*/
+  width: 100%;
+  z-index: 100; /* define quem fica na frente*/
+  padding: 1.5rem;
+}
+
+.menu{
+
+  display: flex; /*itens um do lado do outro*/
+  justify-content: center;
+  list-style: none;
+  gap: 3rem;
+}
+
+.menu-link{
+  text-decoration: none; /*tira a linha abaixo dos itens do menu*/
+  color: var(--claro);
+  font-weight: 500; /*deixar um pouco mais grossinho*/
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.menu-link::after{
+ content: '';
+ height: 2px;
+ width: 0;
+ position:absolute;
+ bottom:0;
+ left: 0;
+ background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+ transition: width 0.5s ease;
+}
+
+.menu-link:hover::after{ /*algo que acontece quando vc passa o mouse em cima*/
+    width: 100%;
+}
+
+.cabecalho{
+  min-height: 100vh; /*a tela toda*/
+  display: flex;
+  justify-content: center;
+  align-items: center; /*essas duas propriedades permitem que eu aliem todos os itens do cabecalho na orizontal e na vertical*/
+  flex-direction: column; /*direção em como os itens vão ficar*/
+
+}
+
+.foto-perfil{
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); /*deixar esfumaçado em redor da foto*/
+    border-radius: 50%; /*deixar aredondado*/
+    border: 4px solid var(--vidro);
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+h1{
+    font-size: 2.5rem;
+    color: var(--primaria);
+    font-weight: bold;
+    margin: 20px;
+}
+
+.cabecalho-sub-titulo{
+    font-size: 1.5rem;
+    color: var(--claro);
+}
+
+.sobre{
+    padding: 5rem 2rem;
+}
+
+
+.sobre-titulo{
+ font-size: 3rem;;
+ color:var(--claro);
+ text-align: center;
+ margin-bottom: 20px;
+}
+
+
+.sobre-caixa{
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;/*artificio que se usa toda vez que se quer centralizar algo*/
+    border-radius: 16px;
+    border:1px solid var(--vidro);
+    backdrop-filter: blur(10px); /*filtro efeito espelho esfumado*/
+    background: rgba(255,255,255,0.05);
+}
+
+.sobre-paragrafo{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.projetos {
+padding: 6rem 2rem;
+
+
+}
+
+.projetos-caixa{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap:2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: start;
+
+}
+
+.projetos-card{
+background: rgba(255,255,255,0.05);
+border-radius: 15px;
+backdrop-filter: blur(5px);
+border: 1px solid var(--vidro);
+overflow: hidden;
+transition: all 0.5s ease;
+cursor: pointer;/*mãozinha*/
+width: fit-content;
+
+
+}
+
+.projetos-titulo{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.projetos-card:hover{
+    box-shadow: 0 10px 20px rgba(79,70,229, 0.2);
+    transform: translateY(-10px) scale(1.03);
+
+}
+
+.projetos-imagem{
+    height: 270px;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.caixa-textos-projeto{
+    padding: 1.3rem;
+}
+
+.paragrafo-projetos{
+    color: rgba(226,232,240, 0.8);
+    line-height: 1.25rem; /*altura da linha*/
+}
+
+.info-projetos{
+    margin-bottom: 5px;
+}
+
+.contatos{
+    padding: 6rem 2rem;
+}
+
+.contatos-titulos{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.formulario-contato{
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+
+}
+
+.campo-form{
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    color: var(--claro);
+    border: 1px solid var(--vidro);
+    outline: none;
+
+
+}
+
+.campo-form:focus{ /*foco da borda da caixinha*/
+border-color: var(--secundaria);
+ box-shadow: 0 10px 20px rgba(79,70,229, 0.2);
+}
+
+.grupo-form{
+  margin-bottom: 2.0rem;
+}
+
+.botao-form{
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5ease;
+ }
+
+ .botao-form:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+ }
+
+.particulas{
+    position: fixed;
+    top 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background:
+    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparente 20%),
+    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparente 20%),
+    var(--maisEscuro);
+
+}
+
+@keyframes flutuar {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    
+}

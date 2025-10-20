@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></link>
+    <title>Portfólio Eunice Mendes</title>
+   </head>
+
+   <body>
+
+    <div class="particulas"></div>
+
+
+      <nav class="navegação">
+         <ul class="menu">
+            <li> 
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+
+            <li> 
+                <a href="#sobre"class="menu-link">Sobre</a>
+            </li>
+
+            <li> 
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+
+            <li> 
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+      </nav>
+      
+      <main id="inicio" class="cabecalho">
+            <img src="WhatsApp Image 2025-10-07 at 22.49.55.jpeg" alt="Foto de Nice Mendes" class="foto-perfil">
+            <h1>Nice Mendes</h1>
+            <p class="cabecalho-sub-titulo">Web Developer</p>
+      </main>
+      
+      <section id="sobre" class="sobre">
+         <h2 class="sobre-titulo">Sobre Mim</h2>
+         <div class="sobre-caixa">
+            <P class="sobre-paragrafo"> 
+                Olá! Seja bem-vindo(a) ao meu Portfólio!
+                Sou Estudante de Tecnologia da Informação e apaixonada por aprendizado constante.
+                Aqui você encontrará meus projetos de desenvolvimento web, planilhas em excel e dicas de segurança cibernéticas, todos criados com dedicação e foco em evolução profissional.
+            </P>
+         </div>
+      </section>
+
+      <section id="projetos" class="projetos">
+         <h2 class="projetos-titulo">Meus Projetos</h2>
+           <div class="projetos-caixa"></div>
+
+
+           <div class="projetos-card">
+              <img src="quiz net.jpg" alt="projeto 1" class="projetos-imagem">
+              <div class="caixa-textos-projeto">
+             <h3 class="info-projetos">Quiz Interativo</h3>
+             <p class="paragrafo-projetos">Quiz Interativo. teste seus conhecimentos em Programação.</p>
+             </div>
+           </div>
+
+
+          </div>
+      </section>
+
+      <section id="contatos" class="contatos">
+        <h2 class="contatos-titulos"> Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" submit="enviarWhats(event)">
+            <div class="grupo-form">
+               <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+                <button type="submit" class="botao-form">Enviar WhatsApp</button>
+            </div>
+
+        </form>
+      </section>
+
+      <script>
+        function enviarWhats(event){
+            event.preventDefault()
+        }
+        
+            const nome = document.getElementById("nome").value;
+            const mensagem = document.getElementById("mensagem").value;
+            const telefone ="5561983111993" 
+
+            const texto =` ${nome} : ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}/?text=${msgFormatada}`;
+
+            window.open(url, "_blank")
+      </script>
+
+    </body>
+</html>
